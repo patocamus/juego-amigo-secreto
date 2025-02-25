@@ -17,3 +17,6 @@
 - HTML5
 - CSS
 - JavaScript
+
+## :computer:Acceder a la web
+Puedes probar la página en el siguiente enlace: https://patocamus.github.io/juego-amigo-secreto/
