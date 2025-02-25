@@ -21,10 +21,28 @@ function agregarAmigo(){ //Declaración de la función que permite agregar amigo
 }
 function imprimirAmigo (){
     let lista = document.getElementById('listaAmigos');
-    let nuevoDatoLista = document.createElement('li');
-    nuevoDatoLista.textContent = amigos[amigos.length - 1];
-    lista.appendChild(nuevoDatoLista);
-    return;
+    lista.innerHTML = ""; //Limpiamos la lista antes de recargar la página.
+    for (let i = 0; i < amigos.length; i++){
+        let nuevoDatoLista = document.createElement('li');
+        nuevoDatoLista.textContent = amigos[i];
+        lista.appendChild(nuevoDatoLista);
+    }
+}
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("¡No has añadido ningún amigo!");
+    } else {
+        let amigoSorteado = Math.floor(Math.random()*amigos.length);
+        imprimirSorteo(amigoSorteado);
+        return amigoSorteado;
+    }
+}
+function imprimirSorteo (amigoSorteado){
+    let sorteo = document.getElementById('resultado');
+    sorteo.innerHTML = "";
+    let sorteoImpreso = document.createElement('li');
+    sorteoImpreso.textContent = amigos[amigoSorteado];
+    sorteo.appendChild(sorteoImpreso);
 }
 function limpiarNombre (){
     document.getElementById('amigo').value = '';
